@@ -1,0 +1,9 @@
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+$env:BINANCE_API_KEY="YOUR_KEY"
+$env:BINANCE_API_SECRET="YOUR_SECRET"
+
+python .\cli.py --symbol BTCUSDT --side BUY  --type MARKET --quantity 0.001
+python .\cli.py --symbol BTCUSDT --side SELL --type LIMIT  --quantity 0.001 --price 80000
